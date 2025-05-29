@@ -1,0 +1,45 @@
+Pentru a rula algoritmi C++ urmam urmatori pasi:
+Trebuie instalat un compilator C++ (GCC sau MSVC):
+La codul secvential avem fisierul incrementare_secventiala.cpp in care modificam valorea lui N
+Dupa deschidem CMD ca administrator si introducem calea catre locul in care sunt salvate fisierele cpp:
+	cd C:\Users\ady\Documents\Facultate\MEvPerf\Coduri C++
+Dupa compilam codul cu comanda urmatoare:
+	g++ incrementare_secventiala.cpp -o incrementare_secventiala
+Dupa ce se termina de compilat va fi creat un fisier .exe apoi introducem comanda:
+	incrementare_secventiala
+Dupa in CMD se va afisa rezultatul timpului de executie.
+
+Pentru codul OpenMp trebuie instalata libraria OpenMP dupa care avem fisierul incrementare_paralel.cpp in care
+modificam valoarea lui N
+Dupa deschidem CMD ca administrator si introducem calea catre locul in care sunt salvate fisierele cpp:
+	cd C:\Users\ady\Documents\Facultate\MEvPerf\Coduri C++
+Dupa compilam codul cu comanda urmatoare:
+	g++ incr -fopenmp incrementare_paralel.cpp -o incrementare_paralel
+Dupa ce se termina de compilat va fi creat un fisier .exe apoi introducem comanda:
+	incrementare_paralel
+Dupa in CMD se va afisa rezultatul timpului de executie.
+
+Pentru codul MPI trebuie instalat Microsoft MPI: MS-MPI Redistributable si MS-MPI SDK
+Instalează Visual Studio (dacă nu ai deja) Adaugă componenta „Desktop development with C++” (pentru compilare C++).
+Deschide Visual Studio Developer Command Prompt (poți căuta x64 Native Tools Command Prompt for VS din Start Menu)
+La codul MPI avem fisierul vector_mpi.cpp in care modificam valorea lui N
+Introducem calea catre locul in care sunt salvate fisierele cpp:
+	cd C:\Users\ady\Documents\Facultate\MEvPerf\Coduri C++
+În promptul deschis introducem comanda:
+	cl /I"C:\Program Files (x86)\Microsoft SDKs\MPI\Include" vector_mpi.cpp /link /LIBPATH:"C:\Program Files (x86)\Microsoft SDKs\MPI\Lib\x64" msmpi.lib
+Dupa ce se termina de compilat va fi creat un fisier .exe apoi introducem comanda:
+	mpiexec -n 4 vector_mpi.exe
+Dupa in prompt se va afisa rezultatul timpului de executie.
+
+Pentru codul CUDA va trebui sa instalezi CUDA Toolkit plus sa ai o placa video NVIDIA pe dispozitiv
+La codul CUDA avem fisierul vector_cuda.cu in care modificam valorea lui N
+Deschide Visual Studio Developer Command Prompt (poți căuta x64 Native Tools Command Prompt for VS din Start Menu)
+Introducem calea catre locul in care sunt salvate fisierele cpp:
+	cd C:\Users\ady\Documents\Facultate\MEvPerf\Coduri C++
+În promptul deschis introducem comanda:
+	nvcc vector_cuda.cu -o vector_cuda.exe
+Dupa ce se termina de compilat va fi creat un fisier .exe apoi introducem comanda:
+	vector_cuda.exe
+Dupa in prompt se va afisa rezultatul timpului de executie.
+
+Si pentru fiecare cod vom repeta pasii acestia pentru 3 valori ale lui N: 10M,50M,100M unde N este dimensiunea vectorului incrementat 
